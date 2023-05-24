@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+<title>Paginacja</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+    </head>
+
+    <body>
+           
+        <div id="app">
+
+        <ul class="post-list">
+            <li v-for="post in paginatedPosts" :key="post.id" class="post-item">{{ post.title }}</li>                       <!-- Wyświetlanie listy postów -->
+        </ul>
+      
+            <div class="pagination"> Strona:
+            <button v-for="page in totalPages" :key="page" @click="goToPage(page)" class="page-button">{{ page }}</button>  <!-- Paginacja -->
+            </div>
+
+        </div>
+        
+        <script src="script.js"></script>
+
+    </body>
+</html>
